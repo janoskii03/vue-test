@@ -1,0 +1,833 @@
+@charset "UTF-8";
+.visit_banner {
+  position: relative;
+}
+.visit_banner .banner_img {
+  width: 100%;
+}
+.visit_banner .banner_img img {
+  width: 100%;
+}
+.visit_banner .banner_title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40%;
+  text-align: center;
+  font-size: 60px;
+  color: #fefefe;
+}
+
+section {
+  color: #08192D;
+  margin: 160px 0;
+}
+
+.opening_info .opening_info_title h2 {
+  font-size: 60px;
+  text-align: center;
+}
+.opening_info .opening_info_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 80px 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.opening_info .opening_info_wrapper .opening_hours_wrapper {
+  width: 50%;
+  padding: 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+}
+.opening_info .opening_info_wrapper .opening_hours_wrapper .opening_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: bold;
+}
+.opening_info .opening_info_wrapper .opening_hours_wrapper .opening_txt p {
+  padding: 8px 0;
+}
+.opening_info .opening_info_wrapper .opening_hours_wrapper .opening_txt p::before {
+  content: "\f186";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  padding-left: 10px;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper {
+  width: 50%;
+  background-color: #fefefe;
+  border-radius: 10px;
+  padding: 20px 20px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calender_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 25px 30px 10px;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calender_header .current_date {
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calender_header .icons span {
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  color: #878787;
+  font-size: 1.9rem;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calender_header .icons span:last-child {
+  margin-right: -10px;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calender_header .icons span:hover {
+  background-color: #aaa;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box {
+  padding: 20px;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box ul li {
+  width: 14.2857142857%;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .weeks li {
+  font-weight: bold;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days {
+  margin-bottom: 20px;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days li {
+  margin-top: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days li::before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days li:hover::before {
+  background-color: #ddd;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days li.inactive {
+  color: #aaa;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days li.active {
+  color: #FCFAF2;
+}
+.opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days li.active::before {
+  background-color: cadetblue;
+}
+
+.admission_price .price_title {
+  font-size: 60px;
+  text-align: center;
+}
+.admission_price .tickets_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 80px 10px;
+  gap: 20px;
+}
+.admission_price .tickets_wrapper .tickets_item {
+  width: 280px;
+  height: 280px;
+  background-color: rgba(254, 254, 254, 0.7);
+  color: #08192D;
+  text-align: center;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 0 0 80px;
+}
+.admission_price .tickets_wrapper .tickets_item p {
+  font-size: 32px;
+}
+.admission_price .tickets_wrapper .tickets_item .tickets_price {
+  font-style: italic;
+}
+.admission_price .tickets_wrapper .tickets_item .tickets_info {
+  position: absolute;
+  top: 100%;
+  padding: 10px;
+}
+.admission_price .tickets_wrapper .tickets_item .tickets_info p {
+  text-align: center;
+  font-size: 20px;
+  color: #91989F;
+}
+.admission_price .page_link {
+  padding: 80px 0;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+}
+.admission_price .page_link a {
+  display: inline-block;
+  padding: 20px 0px 20px 30px;
+  font-size: 40px;
+  font-style: italic;
+  color: #08192D;
+  position: relative;
+  z-index: 1;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.admission_price .page_link a::after {
+  content: "\f02b";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  font-style: normal;
+  padding-left: 10px;
+}
+.admission_price .page_link a::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 80px;
+  height: 80px;
+  aspect-ratio: 80/80;
+  border-radius: 50px;
+  background-color: rgba(8, 25, 45, 0.3);
+  z-index: -1;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.admission_price .page_link a:hover {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.admission_price .page_link a:hover::before {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.admission_price .page_link::before {
+  content: "";
+  height: 1.5px;
+  width: 180%;
+  background-color: #08192D;
+  position: absolute;
+  right: 110%;
+  bottom: 50%;
+}
+.admission_price .page_link::after {
+  content: "";
+  height: 1.5px;
+  width: 180%;
+  background-color: #08192D;
+  position: absolute;
+  left: 110%;
+  top: 50%;
+}
+
+.policies .policies_title h2 {
+  font-size: 60px;
+  text-align: center;
+}
+.policies .basic_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+.policies .basic_wrapper .basic_item {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.policies .basic_wrapper .basic_item .basic_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.policies .basic_wrapper .basic_item .basic_info .title h4 {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 10px 0;
+}
+.policies .basic_wrapper .basic_item .basic_info .txt {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 20px;
+}
+.policies .access_title h3 {
+  font-style: italic;
+  font-size: 36px;
+  text-align: center;
+}
+.policies .access_title p {
+  font-size: 20px;
+  text-align: center;
+  color: #91989F;
+}
+.policies .access_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 40px;
+  padding: 40px 0;
+}
+.policies .access_wrapper .access_item {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.policies .access_wrapper .access_item .access_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.policies .access_wrapper .access_item .access_info .title h4 {
+  font-weight: bold;
+  font-size: 24px;
+  padding: 10px 0;
+}
+.policies .access_wrapper .access_item .access_info .txt {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 20px;
+}
+
+.route .route_title h2 {
+  font-size: 60px;
+  text-align: center;
+}
+.route .transportation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 80px 0;
+}
+.route .transportation .means_item {
+  width: 300px;
+  background-color: rgba(8, 25, 45, 0.7);
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.route .transportation .means_item .means_icon p {
+  color: #fefefe;
+  text-align: center;
+  font-size: 24px;
+  font-style: italic;
+  padding: 20px 0;
+}
+.route .transportation .means_item .means_info p {
+  color: #fefefe;
+  font-size: 20px;
+  font-family: "Noto Sans", sans-serif;
+}
+.route .map {
+  width: 100%;
+  background-color: #222;
+  position: relative;
+  position: relative;
+  padding-bottom: 30%;
+  /* 此為地圖長寬比 */
+  height: 0;
+  overflow: hidden;
+}
+.route .map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .admission_price .price_title {
+    font-size: 60px;
+    text-align: center;
+  }
+  .admission_price .tickets_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 80px 10px;
+    gap: 20px;
+  }
+  .admission_price .tickets_wrapper .tickets_item {
+    width: 220px;
+    height: 220px;
+    background-color: rgba(254, 254, 254, 0.7);
+    color: #08192D;
+    text-align: center;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 0 0 80px;
+  }
+  .admission_price .tickets_wrapper .tickets_item p {
+    font-size: 32px;
+  }
+  .admission_price .tickets_wrapper .tickets_item .tickets_price {
+    font-style: italic;
+  }
+  .admission_price .tickets_wrapper .tickets_item .tickets_info {
+    position: absolute;
+    top: 100%;
+    padding: 10px;
+  }
+  .admission_price .tickets_wrapper .tickets_item .tickets_info p {
+    text-align: center;
+    font-size: 20px;
+    color: #91989F;
+  }
+  .admission_price .page_link {
+    position: relative;
+  }
+  .admission_price .page_link::before {
+    width: 150%;
+  }
+  .admission_price .page_link::after {
+    width: 150%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .visit_banner .banner_title {
+    font-size: 45px;
+  }
+  .opening_info .opening_info_title h2 {
+    font-size: 45px;
+  }
+  .opening_info .opening_info_wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 80px;
+  }
+  .opening_info .opening_info_wrapper .opening_hours_wrapper {
+    width: 80%;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper {
+    width: 80%;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days li {
+    z-index: 0;
+  }
+  .admission_price .price_title {
+    font-size: 45px;
+  }
+  .admission_price .tickets_wrapper {
+    padding: 80px 160px;
+  }
+  .admission_price .page_link::before {
+    width: 120%;
+  }
+  .admission_price .page_link::after {
+    width: 120%;
+  }
+  .policies .policies_title h2 {
+    font-size: 45px;
+  }
+  .route .route_title h2 {
+    font-size: 60px;
+    text-align: center;
+  }
+  .route .transportation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 40px;
+  }
+  .route .transportation .means_item {
+    width: 80%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 80px;
+    padding: 40px 80px;
+  }
+  .route .transportation .means_item .means_icon p {
+    color: #fefefe;
+    text-align: center;
+    font-size: 24px;
+    font-style: italic;
+    padding: 20px 0;
+  }
+  .route .transportation .means_item .means_info p {
+    color: #fefefe;
+    font-size: 20px;
+    font-family: "Noto Sans", sans-serif;
+  }
+  .route .map {
+    margin-top: 40px;
+    padding-bottom: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  section {
+    margin: 80px auto;
+  }
+  .visit_banner .banner_title {
+    font-size: 30px;
+  }
+  .opening_info .opening_info_title h2 {
+    font-size: 40px;
+  }
+  .opening_info .opening_info_wrapper .opening_hours_wrapper {
+    width: 100%;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper {
+    width: 100%;
+    padding: 10px 20px 0;
+    font-size: 16px;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calender_header {
+    padding: 16px 0;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calender_header .icons span {
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calender_header .icons span:last-child {
+    margin-right: 0px;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calendar_box {
+    padding: 0px;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days li {
+    z-index: 0;
+  }
+  .admission_price .price_title {
+    font-size: 40px;
+  }
+  .admission_price .tickets_wrapper {
+    padding: 80px 40px;
+  }
+  .admission_price .tickets_wrapper .tickets_item p {
+    font-size: 20px;
+  }
+  .admission_price .tickets_wrapper .tickets_item .tickets_info {
+    position: absolute;
+    top: 240px;
+    padding: 10px;
+  }
+  .admission_price .tickets_wrapper .tickets_item .tickets_info p {
+    font-size: 16px;
+  }
+  .policies .policies_title h2 {
+    font-size: 40px;
+  }
+  .policies .basic_wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .policies .basic_wrapper .basic_item {
+    width: 80%;
+  }
+  .policies .basic_wrapper .basic_item .basic_info .title h4 {
+    font-size: 20px;
+  }
+  .policies .basic_wrapper .basic_item .basic_info .txt {
+    font-size: 16px;
+  }
+  .policies .basic_wrapper .basic_item .basic_info .txt p {
+    text-align: left;
+  }
+  .policies .access_title h3 {
+    font-size: 32px;
+  }
+  .policies .access_title p {
+    font-size: 20px;
+    padding: 0 40px;
+  }
+  .policies .access_wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .policies .access_wrapper .access_item {
+    width: 80%;
+  }
+  .policies .access_wrapper .access_item .access_info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .policies .access_wrapper .access_item .access_info .title h4 {
+    font-size: 20px;
+  }
+  .policies .access_wrapper .access_item .access_info .txt {
+    font-size: 16px;
+  }
+  .policies .access_wrapper .access_item .access_info .txt p {
+    text-align: left;
+  }
+  .route {
+    position: relative;
+  }
+  .route .route_title h2 {
+    font-size: 40px;
+  }
+  .route .transportation {
+    display: none;
+  }
+  .route .map {
+    margin-top: 40px;
+    padding-bottom: 100%;
+    -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+  }
+  .route::before {
+    content: "";
+    height: 70px;
+    width: 1.5px;
+    background-color: #08192D;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 25px);
+  }
+  .route::after {
+    content: "";
+    height: 110px;
+    width: 1.5px;
+    background-color: #08192D;
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 25px);
+  }
+}
+@media screen and (max-width: 410px) {
+  .visit_banner .banner_title {
+    font-size: 24px;
+  }
+  .opening_info .opening_info_wrapper .opening_hours_wrapper {
+    font-size: 16px;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper {
+    width: 100%;
+    padding: 10px 20px 0;
+    font-size: 12px;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calender_header {
+    padding: 16px 0;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calender_header .icons span {
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calendar_box {
+    padding: 0px;
+  }
+  .opening_info .opening_info_wrapper .calendar_wrapper .calendar_box .days li {
+    z-index: 0;
+  }
+  .admission_price .page_link {
+    padding: 20px 0;
+    position: relative;
+  }
+  .admission_price .page_link a {
+    font-size: 30px;
+  }
+  .admission_price .page_link a::after {
+    padding-left: 5px;
+  }
+  .admission_price .page_link a::before {
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 50/50;
+    top: 10%;
+  }
+  .admission_price .page_link::before {
+    content: "";
+    height: 60px;
+    width: 1.5px;
+    background-color: #08192D;
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+  }
+  .admission_price .page_link::after {
+    content: "";
+    height: 60px;
+    width: 1.5px;
+    background-color: #08192D;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+  }
+}

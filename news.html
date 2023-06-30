@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | yeesiàsià gallery</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/news.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="main_container">
+            <!-- header -->
+            <input type="checkbox" name="hamberger" id="ham">
+            <header class="main_header">
+                <div class="logo">
+                    <h1><a href="index.html"><img src="img/logo/logo_vector.svg" alt="yeesiàsià gallery"></a></h1>
+                </div>
+
+                <!-- hamburger selector -->
+                <label for="ham" class="hb">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <nav class="main_nav">
+                    <ul>
+                        <li v-for="item in [...menu]" :key="item.index"> <a :href="item.link">{{item.name_en}} </a> </li> 
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- banner -->
+            <div class="news_banner">
+                <div class="banner_img">
+                    <img :src="banner.img" alt="news">
+                </div>
+                <div class="banner_title">
+                    <h2>{{banner.title}}</h2>
+                </div>
+            </div>
+
+            <!-- news list -->
+            <section class="news">
+                <div class="container">
+                    <!-- 下拉式選單 -->
+                    <div class="select_box">
+                        <label for="dates">Category</label>
+                        <select name="dates" id="dates" >
+                            <option value="" v-for="item in select" :key="selecter">{{item}}</option>
+                          
+                        </select>
+                    </div>
+
+                    <div class="news_wrapper"  >
+                        <div class="news_card" v-for="item in newsCard" :key="item.index">
+                            <div class="news_img">
+                                <img :src="item.img" alt="information">
+                            </div>
+                            <div class="news_info">
+                                <span>{{item.date}}</span>
+                                <h4>{{item.title}}</h4>
+                            </div>
+                            <div class="page_link">
+                                <a :href="item.href">{{item.text}}</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="news_page_link">
+                        <a href="#">{{newsPageLink}}</a>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- top button -->
+            <button onclick="topFunction()" class="topBtn" title="go to top">TOP</button>
+
+            <!-- footer -->
+            <footer>
+                <div class="footer_wrapper">
+                    <div class="footer_logo">
+                        <a href="index.html">
+                            <img :src="logoimgSrc" alt="yeesiàsià gallery">
+                        </a>
+                    </div>
+                    <div class="footer_info">
+                        <div class="footer_openinghours">
+                            <div class="footer_title">
+                                <h4>{{openingHoursarea.footerTitle}}</h4>
+                            </div>
+                            <div class="footer_content">
+                                <div class="footer_openinghoursinfo">
+                                    <div class="footer_date">
+                                        <p>{{openingHoursarea.closedDay}}</p>
+                                    </div>
+                                    <div class="footer_time">
+                                        <p>{{openingHoursarea.closedTime}}</p>
+                                    </div>
+                                </div>
+                                <div class="footer_openinghoursinfo">
+                                    <div class="footer_date">
+                                        <p>{{openingHoursarea.opendDay}}</p>
+                                    </div>
+                                    <div class="footer_time">
+                                        <p>{{openingHoursarea.openTime}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer_address">
+                            <div class="footer_title">
+                                <h4>{{addressarea.
+                                    footerTitle}}</h4>
+                            </div>
+                            <div class="footer_content">
+                                <P>{{addressarea.
+                                    content}}</P>
+                            </div>
+                        </div>
+                        <div class="footer_nav">
+                            <div class="footer_title">
+                                <h4>{{ moreAboutarea.footerTitle }}</h4>
+                            </div>
+                            <div class="footer_content">
+                                <ul>
+                                    <li v-for="item in moreAboutarea.moreAbout" :key="item.linkUrl">
+                                        <a :href="item.linkUrl">{{ item.text }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="footer_socialmedia">
+                            <div class="footer_title">
+                                <h4>{{ followUsarea.footerTitle }}</h4>
+                            </div>
+                            <div class="footer_content">
+                                <div class="socialmedia_icon">
+                                    <div v-for="item in followUsarea.followUs" :key="item.imageAlt">
+                                        <a :href="item.linkUrl">
+                                            <img :src="item.imageUrl" :alt="item.imageAlt">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="copyright">
+                            <p>&copy; {{ copyright.galleryName }} 2023</p>
+                            <span>{{ copyright.projectInfo }}</span>
+                            <br>
+                            <span>{{ copyright.purpose }}</span>
+                        </div>
+
+
+                    </div>
+                    <div class="footer_img">
+                        <img :src="footerimgSrc" alt="inner peace">
+                    </div>
+                </div>
+            </footer>
+
+
+
+        </div>
+    </div>
+
+    <!-- carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        // carousel
+        $(document).ready(function () {
+            $('.banner_slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true,
+                autoplaySpeed: 5000,
+            });
+        });
+
+    </script>
+
+    <!-- top btn js -->
+    <script src="js/main.js"></script>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    menu: [
+              {
+                index: "visit",
+                link: "visit.html",
+                name_en: "visit",
+              },
+              {
+                index: "exhibition&event",
+                link: "exhibition.html",
+                name_en: "exhibition&event",
+              },
+              {
+                index: "tickets",
+                link: "tickets.html",
+                name_en: "tickets",
+              },
+              {
+                index: "news",
+                link: "news.html",
+                name_en: "news",
+              },
+              {
+                index: "about",
+                link: "about.html",
+                name_en: "about",
+              },
+            ],
+                    banner: {
+                        img: 'img/bg/banner_news.jpg',
+                        title: 'news'
+                    },
+                    select: ['2023 June', '2023 May', '2023 Apr', '2023 Mar', '2023 Feb', '2023 Jan'],
+                    newsCard: {
+                        card1:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card2:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card3:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card4:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card5:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card6:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card7:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card8:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card9:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card10:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card11:{
+                            img:'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }, 
+                        card12:{
+                            img: 'img/exhibition/current/ex01.jpg',
+                            date: '2023.04.18',
+                            title: 'Dreamscape - Where Fantasy and Reality Converge',
+                            href: 'ex_intro.html',
+                            text:'view all'
+                        }
+
+                    },
+                    newsPageLink:'more',
+                    logoimgSrc: 'img/logo/logo_vertiacl.svg',
+
+                    openingHoursarea: {
+                        footerTitle: "OPENING HOURS",
+                        closedDay: "SUNDAY",
+                        closedTime: "closed",
+                        opendDay: "MONDAY - SATURDAY",
+                        openTime: "11:00 am - 06:00 pm"
+                    },
+
+                    addressarea: {
+                        footerTitle: "ADDRESS",
+                        content: "Trekanten C 1, 2630 Taastrup Nykirke Høje Taastrup, Denmark"
+                    },
+
+                    moreAboutarea: {
+                        footerTitle: "MORE ABOUT",
+                        moreAbout: [
+                            {
+                                linkUrl: 'about.html#',
+                                text: ' # concept & space'
+                            },
+                            {
+                                linkUrl: 'visit.html',
+                                text: ' # visit information'
+                            },
+                            {
+                                linkUrl: 'exhibition.html',
+                                text: '# exhibition & event'
+                            },
+                            {
+                                linkUrl: 'tickets.html',
+                                text: '# tickets & FAQ'
+                            },
+                            {
+                                linkUrl: 'news.html',
+                                text: '# news'
+                            }
+                        ]
+                    },
+
+                    followUsarea: {
+                        footerTitle: "FOLLOW US",
+                        followUs: [
+                            {
+                                linkUrl: '#',
+                                imageUrl: 'img/icon/40/line.svg',
+                                imageAlt: 'LINE'
+                            },
+                            {
+                                linkUrl: '#',
+                                imageUrl: 'img/icon/40/instagram.svg',
+                                imageAlt: 'INSTAGRAM'
+                            },
+                            {
+                                linkUrl: '#',
+                                imageUrl: 'img/icon/40/facebook.svg',
+                                imageAlt: 'FACEBOOK'
+                            },
+                            {
+                                linkUrl: '#',
+                                imageUrl: 'img/icon/40/mail.svg',
+                                imageAlt: 'MAIL'
+                            }
+
+                        ]
+                    },
+
+                    copyright: {
+                        galleryName: "yeesiàsià gallery",
+                        projectInfo: "Personal project from the 88th student of TibaMe Front-End Engineering training program",
+                        purpose: "For learning and showcasing purposes only"
+                    },
+
+                    footerimgSrc: 'img/about/concept03.jpg',
+
+                }
+            }
+
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

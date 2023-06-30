@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yeesiàsià gallery</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+</head>
+
+<body>
+<div id="app">
+    <div class="main_container">
+
+        <!-- header -->
+        <input type="checkbox" name="hamberger" id="ham">
+        <header class="main_header">
+            <div class="logo">
+                <h1><a href="index.html"><img src="img/logo/logo_vector.svg" alt="yeesiàsià gallery"></a></h1>
+            </div>
+
+            <!-- hamburger selector -->
+            <label for="ham" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="main_nav">
+                <ul>
+                    <li v-for="item in [...menu]" :key="item.index"> <a :href="item.link">{{item.name_en}} </a> </li> 
+                </ul>
+            </nav>
+        </header>
+
+        <!-- slideshow -->
+        <section class="home-slideshow">
+            <div class="slideshow-mover">
+                <img v-bind:src="siteInfo.section1.src" alt="gallery">
+                <img v-bind:src="siteInfo.section1.src" alt="gallery">
+            </div>
+        </section>
+
+
+
+        <!-- whats on -->
+        <section class="whatson">
+            <h2>{{siteInfo.section2.title}}</h2>
+            <div class="container">
+                <div class="whatson_wrapper">
+                    <div class="whatson_slider">
+                        <div class="whatson_item" v-for="(item, index) in siteInfo.section2.list" :key="index">
+                            <a :href="item.link">
+                                <div whatson_img>
+                                    <img :src="item.src" alt="">
+                                </div>
+                                <div class="whatson_intro">
+                                    <h3>{{item.title}}</h3>
+                                    <h4>{{item.date}}</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- <div class="whatson_item">
+                            <a href="ex_intro.html">
+                                <div whatson_img>
+                                    <img src="img/new_on/whatson02.png" alt="">
+                                </div>
+                                <div class="whatson_intro">
+                                    <h3>something you dream of</h3>
+                                    <h4>2023.04.18 - 2023.06.18</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="whatson_item">
+                            <a href="ex_intro.html">
+                                <div whatson_img>
+                                    <img src="img/new_on/whatson03.jpg" alt="">
+                                </div>
+                                <div class="whatson_intro">
+                                    <h3>something you dream of</h3>
+                                    <h4>2023.04.18 - 2023.06.18</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="whatson_item">
+                            <a href="ex_intro.html">
+                                <div whatson_img>
+                                    <img src="img/new_on/whatson01.jpg" alt="">
+                                </div>
+                                <div class="whatson_intro">
+                                    <h3>something you dream of</h3>
+                                    <h4>2023.04.18 - 2023.06.18</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="whatson_item">
+                            <a href="ex_intro.html">
+                                <div whatson_img>
+                                    <img src="img/new_on/whatson02.png" alt="">
+                                </div>
+                                <div class="whatson_intro">
+                                    <h3>something you dream of</h3>
+                                    <h4>2023.04.18 - 2023.06.18</h4>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="whatson_item">
+                            <a href="ex_intro.html">
+                                <div whatson_img>
+                                    <img src="img/new_on/whatson03.jpg" alt="">
+                                </div>
+                                <div class="whatson_intro">
+                                    <h3>something you dream of</h3>
+                                    <h4>2023.04.18 - 2023.06.18</h4>
+                                </div>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- news -->
+        <section class="news">
+            <div class="container">
+                <div class="news_wrapper">
+                    <div class="news_title">
+                        <h2>{{siteInfo.section3.title}}</h2>
+                        <div class="page_link">
+                            <a :href="siteInfo.section3.button.link">{{siteInfo.section3.button.btnName}}</a>
+                        </div>
+                    </div>
+                    <div class="news_list">
+                        <ul>
+                            <li v-for="(item, index) in siteInfo.section3.list" :key="index">
+                                <a :href="item.link">
+                                    <span class="news_date">
+                                        {{item.date}}
+                                    </span>
+                                    <h3>
+                                        {{item.title}}
+                                    </h3>
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="ex_intro.html">
+                                    <span class="news_date">
+                                        2023.04.18
+                                    </span>
+                                    <h3>
+                                        Engaging with Artists: Delve into Their Creative Inspirations and Meanings
+                                    </h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ex_intro.html">
+                                    <span class="news_date">
+                                        2023.04.18
+                                    </span>
+                                    <h3>
+                                        Annual Closure Notice: Gallery Temporarily Closed
+                                    </h3>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- subscribe -->
+        <section class="subscribe">
+            <div class="container">
+                <div class="subscirbe_wrapper">
+                    <div class="subscribe_intro">
+                        <p>
+                            {{siteInfo.section4.text}}
+                        </p>
+                    </div>
+                    <div class="subscribe_input">
+                        <form>
+                            <input type="text" placeholder="Email address" name="mail" required>
+                            <input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- top button -->
+        <button onclick="topFunction()" class="topBtn" title="go to top">TOP</button>
+
+        <!-- footer -->
+        <footer>
+            <div class="footer_wrapper">
+                <div class="footer_logo">
+                    <a href="index.html">
+                        <img :src="logoimgSrc" alt="yeesiàsià gallery">
+                    </a>
+                </div>
+                <div class="footer_info">
+                    <div class="footer_openinghours">
+                        <div class="footer_title">
+                            <h4>{{openingHoursarea.footerTitle}}</h4>
+                        </div>
+                        <div class="footer_content">
+                            <div class="footer_openinghoursinfo">
+                                <div class="footer_date">
+                                    <p>{{openingHoursarea.closedDay}}</p>
+                                </div>
+                                <div class="footer_time">
+                                    <p>{{openingHoursarea.closedTime}}</p>
+                                </div>
+                            </div>
+                            <div class="footer_openinghoursinfo">
+                                <div class="footer_date">
+                                    <p>{{openingHoursarea.opendDay}}</p>
+                                </div>
+                                <div class="footer_time">
+                                    <p>{{openingHoursarea.openTime}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_address">
+                        <div class="footer_title">
+                            <h4>{{addressarea.
+                                footerTitle}}</h4>
+                        </div>
+                        <div class="footer_content">
+                            <P>{{addressarea.
+                                content}}</P>
+                        </div>
+                    </div>
+                    <div class="footer_nav">
+                        <div class="footer_title">
+                            <h4>{{ moreAboutarea.footerTitle }}</h4>
+                        </div>
+                        <div class="footer_content">
+                            <ul>
+                                <li v-for="item in moreAboutarea.moreAbout" :key="item.linkUrl">
+                                    <a :href="item.linkUrl">{{ item.text }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_socialmedia">
+                        <div class="footer_title">
+                            <h4>{{ followUsarea.footerTitle }}</h4>
+                        </div>
+                        <div class="footer_content">
+                            <div class="socialmedia_icon">
+                                <div v-for="item in followUsarea.followUs" :key="item.imageAlt">
+                                    <a :href="item.linkUrl">
+                                        <img :src="item.imageUrl" :alt="item.imageAlt">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        <p>&copy; {{ copyright.galleryName }} 2023</p>
+                        <span>{{ copyright.projectInfo }}</span>
+                        <br>
+                        <span>{{ copyright.purpose }}</span>
+                    </div>
+
+
+                </div>
+                <div class="footer_img">
+                    <img :src="footerimgSrc" alt="inner peace">
+                </div>
+            </div>
+        </footer>
+
+    </div> <!--main container-->
+
+</div>
+
+    <!-- carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        // carousel
+        $(document).ready(function () {
+            $('.whatson_slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                speed: 500,
+                autoplaySpeed: 5000,
+                infinite: true,
+                autoplay: true,
+                centerMode: true,
+                centerPadding: "0",
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                        }
+                    },
+                ]
+            });
+        });
+    </script>
+
+    <!-- top btn js -->
+    <script src="js/main.js"></script>
+
+
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script> -->
+    <script>
+        // let data = {
+        //     src: 'img/index/big_bg_02.png'
+        // } 
+
+
+        // let vm = new Vue({
+        //     el: '#app',
+        //     data: data,
+        // })
+
+        Vue.createApp({
+            data() {
+                return{
+                    menu: [
+              {
+                index: "visit",
+                link: "visit.html",
+                name_en: "visit",
+              },
+              {
+                index: "exhibition&event",
+                link: "exhibition.html",
+                name_en: "exhibition&event",
+              },
+              {
+                index: "tickets",
+                link: "tickets.html",
+                name_en: "tickets",
+              },
+              {
+                index: "news",
+                link: "news.html",
+                name_en: "news",
+              },
+              {
+                index: "about",
+                link: "about.html",
+                name_en: "about",
+              },
+            ],
+                    siteInfo: {
+                        section1: {
+                            src: 'img/index/big_bg_02.png',
+                        },
+                        section2: {
+                            title: 'What’s on', 
+                            list: [
+                                {
+                                    link:'ex_intro.html',
+                                    src:'img/new_on/whatson01.jpg',
+                                    title: 'something you dream of',
+                                    date:'2023.04.18 - 2023.06.18',                                    
+                                },
+                                {
+                                    link:'ex_intro.html',
+                                    src:'img/new_on/whatson02.png',
+                                    title: 'something you dream of',
+                                    date:'2023.04.18 - 2023.06.18',
+                                },
+                                {
+                                    link:'ex_intro.html',
+                                    src:'img/new_on/whatson03.jpg',
+                                    title: 'something you dream of',
+                                    date:'2023.04.18 - 2023.06.18',
+                                },
+                                {
+                                    link:'ex_intro.html',
+                                    src:'img/new_on/whatson01.jpg',
+                                    title: 'something you dream of',
+                                    date:'2023.04.18 - 2023.06.18',
+                                },
+                                {
+                                    link:'ex_intro.html',
+                                    src:'img/new_on/whatson02.png',
+                                    title: 'something you dream of',
+                                    date:'2023.04.18 - 2023.06.18',
+                                },
+                                {
+                                    link:'ex_intro.html',
+                                    src:'img/new_on/whatson03.jpg',
+                                    title: 'something you dream of',
+                                    date:'2023.04.18 - 2023.06.18',
+                                }
+                            ],
+
+                        },
+                        section3: {
+                            title: 'NEWS',
+                            button: {
+                                link: 'news.html',
+                                btnName:'view more',
+                            },
+                            list:[
+                                {
+                                    link:'ex_intro.html',
+                                    date:'2023.04.18',
+                                    title:'Grand Opening! Embark on a Journey to Explore the Beauty of Art'
+                                },
+                                {
+                                    link:'ex_intro.html',
+                                    date:'2023.04.18',
+                                    title:'Engaging with Artists: Delve into Their Creative Inspirations and Meanings'
+                                },
+                                {
+                                    link:'ex_intro.html',
+                                    date:'2023.04.18',
+                                    title:'Annual Closure Notice: Gallery Temporarily Closed'
+                                }
+                            ],
+
+                        },
+                        section4: {
+                            text:'Join us on this enriching journey as we bring together art lovers, creators, and enthusiasts to celebrate the beauty and transformative power of artistic expression.',
+                        },
+                        
+                    },
+                    logoimgSrc: 'img/logo/logo_vertiacl.svg',
+
+                    openingHoursarea: {
+                        footerTitle: "OPENING HOURS",
+                        closedDay: "SUNDAY",
+                        closedTime: "closed",
+                        opendDay: "MONDAY - SATURDAY",
+                        openTime: "11:00 am - 06:00 pm"
+                    },
+
+                    addressarea: {
+                        footerTitle: "ADDRESS",
+                        content: "Trekanten C 1, 2630 Taastrup Nykirke Høje Taastrup, Denmark"
+                    },
+
+                    moreAboutarea: {
+                        footerTitle: "MORE ABOUT",
+                        moreAbout: [
+                            {
+                                linkUrl: 'about.html#',
+                                text: ' # concept & space'
+                            },
+                            {
+                                linkUrl: 'visit.html',
+                                text: ' # visit information'
+                            },
+                            {
+                                linkUrl: 'exhibition.html',
+                                text: '# exhibition & event'
+                            },
+                            {
+                                linkUrl: 'tickets.html',
+                                text: '# tickets & FAQ'
+                            },
+                            {
+                                linkUrl: 'news.html',
+                                text: '# news'
+                            }
+                        ]
+                    },
+
+                    followUsarea: {
+                        footerTitle: "FOLLOW US",
+                        followUs: [
+                            {
+                                linkUrl: '#',
+                                imageUrl: 'img/icon/40/line.svg',
+                                imageAlt: 'LINE'
+                            },
+                            {
+                                linkUrl: '#',
+                                imageUrl: 'img/icon/40/instagram.svg',
+                                imageAlt: 'INSTAGRAM'
+                            },
+                            {
+                                linkUrl: '#',
+                                imageUrl: 'img/icon/40/facebook.svg',
+                                imageAlt: 'FACEBOOK'
+                            },
+                            {
+                                linkUrl: '#',
+                                imageUrl: 'img/icon/40/mail.svg',
+                                imageAlt: 'MAIL'
+                            }
+
+                        ]
+                    },
+
+                    copyright: {
+                        galleryName: "yeesiàsià gallery",
+                        projectInfo: "Personal project from the 88th student of TibaMe Front-End Engineering training program",
+                        purpose: "For learning and showcasing purposes only"
+                    },
+
+                    footerimgSrc: 'img/about/concept03.jpg',
+
+                }
+            }
+
+
+        }).mount('#app')
+
+
+    </script>
+
+
+
+</body>
+
+</html>

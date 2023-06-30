@@ -1,0 +1,583 @@
+.banner_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .banner_item {
+        width: 100%;
+        height: 600px;
+        margin: 0 auto;
+
+
+        .banner_card {
+            display: flex;
+
+            .banner_img {
+                width: 65%;
+                height: 600px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .banner_info {
+                width: 35%;
+                box-sizing: border-box;
+                background-color: rgba($color: #fff, $alpha: 0.5);
+                color: #08192D;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                position: relative;
+
+
+                h4 {
+                    font-size: 40px;
+                }
+
+                span {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 20px;
+                    color: #91989F;
+                }
+
+
+                .page_link {
+                    text-align: center;
+                    padding: 40px;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+
+                    a {
+                        display: inline-block;
+                        padding: 20px 30px;
+                        font-size: 20px;
+                        font-style: italic;
+                        color: #08192D;
+                        position: relative;
+                        z-index: 1;
+                        transform: translate(0);
+                        transition: all .5s ease-in-out;
+
+
+                        &::after {
+                            content: "\f178";
+                            font-family: "Font Awesome 6 Free";
+                            font-weight: 600;
+                            font-style: normal;
+                            padding-left: 10px;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            content: "";
+                            width: 60px;
+                            height: 60px;
+                            aspect-ratio: 60/60;
+                            border-radius: 50px;
+                            border: 1px solid #08192D;
+                            z-index: -1;
+                            transform-origin: left;
+                            transform: scale(1);
+                            transition: all .5s ease-in-out;
+                        }
+
+                        &:hover {
+                            transform: translateX(10px);
+                            transition: all .5s ease-in-out;
+                        }
+
+                        &:hover::before {
+                            transform-origin: left;
+                            transform: scale(1.5);
+                            transition: all .5s ease-in-out;
+                        }
+
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+
+.past {
+    color: #08192D;
+    margin: 160px 0;
+
+    .past_title {
+        // text-align: center;
+
+        h2 {
+            padding-left: 40px;
+            font-size: 60px;
+        }
+    }
+
+    #btnWrapper {
+        padding: 40px 0 0 40px;
+        display: flex;
+        // justify-content: center;
+        gap: 20px;
+
+        .btn {
+            cursor: pointer;
+            border: none;
+            font-family: 'Noto Sans', sans-serif;
+            color: #08192D;
+            background-color: none;
+            font-size: 20px;
+            padding: 8px 20px;
+            border-radius: none;
+            z-index: 1;
+            position: relative;
+            transition: all .5s;
+
+            &::before {
+                background-color: #91989F;
+                content: "";
+                width: 100%;
+                height: 2px;
+                top: 100%;
+                left: 0;
+                position: absolute;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.5s ease-in-out;
+                z-index: -1;
+            }
+
+            &:hover::before {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            &:hover {
+                transition: all .5s;
+            }
+        }
+
+        .active {
+            color: #08192D;
+            background-color: rgba($color: #08192D, $alpha: 0.3);
+        }
+    }
+}
+
+
+
+.past_wrapper {
+    padding: 80px 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+
+    .pastItem {
+        width: 300px;
+        transition: all 0.5s ease-in-out;
+        margin: 20px 0;
+        display: none;
+
+        .past_img {
+            width: 300px;
+            height: 300px;
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 0px 20px 100px 20px;
+                transition: all .5s ease-in-out;
+
+            }
+        }
+
+        .past_ex_intro {
+            color: #08192D;
+            font-size: 32px;
+            text-align: center;
+            font-style: italic;
+            padding: 10px;
+            position: relative;
+            transition: all .5s ease-in-out;
+
+            &::before {
+                background-color: #91989F;
+                content: "";
+                inset: 50% 0 0 0;
+                position: absolute;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.5s ease-in-out;
+                z-index: -1;
+            }
+        }
+
+        &:hover {
+            filter: grayscale(100%);
+            transition: all .5s ease-in-out;
+
+            img {
+                border-radius: 0px 20px 0px 20px;
+                transition: all .5s ease-in-out;
+            }
+
+            .past_ex_intro {
+                position: relative;
+                transition: all .5s ease-in-out;
+
+                &::before {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+
+            }
+
+        }
+    }
+
+    .show {
+        display: block;
+    }
+
+
+}
+
+.more_link {
+    text-align: center;
+
+    a {
+        display: inline-block;
+        padding: 20px 30px;
+        font-size: 40px;
+        color: #08192D;
+        position: relative;
+        z-index: 1;
+        transform: translate(0);
+        transition: all .5s ease-in-out;
+
+
+        &::after {
+            content: "\f70e";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+            font-style: normal;
+            padding-left: 10px;
+        }
+
+        &::before {
+            position: absolute;
+            inset: 0;
+            content: "";
+            width: 60px;
+            height: 60px;
+            aspect-ratio: 60/60;
+            border-radius: 50%;
+
+            background-color: rgba($color: #08192D, $alpha: .3);
+            z-index: -1;
+            transform-origin: left;
+            transform: scale(1);
+            transition: all .5s ease-in-out;
+        }
+
+        &:hover {
+            transform: translateY(10px);
+            color: #91989F;
+            transition: all .5s linear;
+        }
+
+        &:hover::before {
+            transform: scale(2.4);
+            background-color: rgba($color: #91989F, $alpha: .3);
+            transition: all .5s ease-in-out;
+        }
+
+    }
+}
+
+
+
+// ***** RWD *****
+// ***** RWD *****
+// ***** RWD *****
+// ***** RWD *****
+// special setting for text of banner
+@media screen and (max-width:1200px) {
+    .banner_wrapper {
+
+        .banner_item {
+
+            .banner_card {
+
+                .banner_info {
+                    padding: 30px 40px;
+
+                    h4 {
+                        font-size: 36px;
+                    }
+
+                    p {
+                        font-size: 18px;
+                    }
+
+                    .page_link {
+                        padding: 20px 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// ***** RWD *****
+// iPad & Cellphone -- width < 1023
+
+@media screen and (max-width:1023px) {
+
+    // banner setting on the iPad device
+    .banner_wrapper {
+
+        .banner_item {
+            height: auto;
+
+            .banner_card {
+
+                .banner_img {
+                    width: 60%;
+                    height: 450px;
+                }
+
+                .banner_info {
+                    width: 40%;
+                    padding: 20px 30px;
+
+                    h4 {
+                        font-size: 30px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+
+                    .page_link {
+                        padding: 10px 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    // past title & button setting on the iPad device
+    .past {
+        margin: 160px 0;
+
+        .past_title {
+
+            h2 {
+                font-size: 45px;
+            }
+        }
+    }
+
+
+    // past wrapper setting on the iPad device
+    .past_wrapper {
+        padding: 80px 20px;
+        gap: 10px;
+
+        .pastItem {
+            width: 280px;
+
+            .past_img {
+                width: 280px;
+                height: 280px;
+            }
+
+            .past_ex_intro {
+                font-size: 28px;
+            }
+        }
+    }
+
+}
+
+
+// ***** RWD *****
+// ***** RWD *****
+// 960 breakpoints special for past_wrapper
+@media screen and (max-width:959px) {
+    .past_wrapper {
+        padding: 80px 20px;
+        gap: 10px;
+
+        .pastItem {
+            width: 240px;
+
+            .past_img {
+                width: 240px;
+                height: 240px;
+            }
+
+            .past_ex_intro {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+
+
+
+// ***** RWD *****
+// Cellphone -- width < 768
+@media screen and (max-width:767px) {
+
+    // banner setting on the Cellphone device
+    .banner_wrapper {
+
+        .banner_item {
+            height: auto;
+
+            .banner_card {
+                // display: flex;
+                flex-direction: column;
+
+                .banner_img {
+                    width: 100%;
+                    height: 300px;
+                }
+
+                .banner_info {
+                    width: 100%;
+
+                    h4 {
+                        font-size: 30px;
+                    }
+
+                    span {
+                        font-size: 16px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+
+                    .page_link {
+                        text-align: right;
+                        padding: 0;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+    // past title & button setting on the Cellphone device
+    .past {
+        margin: 80px 0;
+
+        .past_title {
+            text-align: center;
+            
+
+            h2 {
+                font-size: 36px;
+                padding: 0;
+            }
+        }
+
+        // past button setting on the Cellphone device
+        #btnWrapper {
+            // padding-top: 20px;
+            justify-content: center;
+            gap: 10px;
+            padding: 40px 0 0 0;
+
+            .btn {
+                font-size: 16px;
+                padding: 4px 20px;
+                border-radius: 0;
+            }
+        }
+    }
+
+
+    .more_link {
+        position: relative;
+
+        &::after {
+            content: '';
+            height: 120px;
+            width: 1.5px;
+            background-color: #08192D;
+            position: absolute;
+            left: 50%;
+            top: 110%;
+        }
+    }
+}
+
+
+
+// ***** RWD *****
+// mini-version for iphone XS
+@media screen and (max-width:410px) {
+
+    // banner setting on Iphone XS
+    .banner_wrapper {
+
+        .banner_item {
+
+            .banner_card {
+
+                .banner_info {
+
+                    h4 {
+                        font-size: 24px;
+                    }
+
+                    .page_link {
+                        text-align: right;
+                        padding: 0;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // past title & button setting on Iphone XS
+    .past {
+        margin: 80px 0;
+
+        .past_title {
+
+            h2 {
+                font-size: 30px;
+            }
+        }
+    }
+}

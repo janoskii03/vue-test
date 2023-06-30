@@ -1,0 +1,1061 @@
+// banner ----------
+.visit_banner {
+    position: relative;
+
+    .banner_img {
+        width: 100%;
+
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .banner_title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 40%;
+        text-align: center;
+        font-size: 60px;
+        color: #fefefe;
+    }
+
+}
+
+section {
+    color: #08192D;
+    margin: 160px 0;
+}
+
+// opening hours ----------
+.opening_info {
+
+    .opening_info_title {
+        h2 {
+            font-size: 60px;
+            text-align: center;
+        }
+    }
+
+    .opening_info_wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 80px 40px;
+        box-sizing: border-box;
+
+        .opening_hours_wrapper {
+            width: 50%;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 20px;
+
+            .opening_item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-weight: bold;
+            }
+
+            .opening_txt {
+                p {
+                    padding: 8px 0;
+
+                    &::before {
+                        content: '\f186';
+                        font-family: "Font Awesome 6 Free";
+                        font-weight: 900;
+
+                        padding-left: 10px;
+                    }
+                }
+            }
+
+        }
+
+        // calendar ----------
+        .calendar_wrapper {
+            width: 50%;
+            background-color: #fefefe;
+            border-radius: 10px;
+            padding: 20px 20px 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 20px;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+
+            .calender_header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 25px 30px 10px;
+
+                .current_date {
+                    font-size: 1.45rem;
+                    font-weight: 500;
+                }
+
+                .icons span {
+                    height: 38px;
+                    width: 38px;
+                    margin: 0 1px;
+                    color: #878787;
+                    font-size: 1.9rem;
+                    text-align: center;
+                    line-height: 38px;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    &:last-child {
+                        margin-right: -10px;
+                    }
+
+                    &:hover {
+                        background-color: #aaa;
+                    }
+                }
+            }
+
+            .calendar_box {
+                padding: 20px;
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    text-align: center;
+
+                    li {
+                        width: calc(100% / 7);
+                    }
+                }
+
+                .weeks li {
+                    font-weight: bold;
+                }
+
+                .days {
+                    margin-bottom: 20px;
+
+                    li {
+                        margin-top: 30px;
+                        cursor: pointer;
+                        position: relative;
+                        z-index: 1;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            height: 40px;
+                            width: 40px;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            border-radius: 50%;
+                            z-index: -1;
+                        }
+
+                        &:hover::before {
+                            background-color: #ddd;
+                        }
+                    }
+
+                    li.inactive {
+                        color: #aaa;
+                    }
+
+                    li.active {
+                        color: #FCFAF2;
+
+                        &::before {
+                            background-color: cadetblue;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+    }
+}
+
+
+// admission_price
+.admission_price {
+
+    .price_title {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .tickets_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 80px 10px;
+        gap: 20px;
+
+        .tickets_item {
+            width: 280px;
+            height: 280px;
+            background-color: rgba(#fefefe, 0.7);
+            color: #08192D;
+            text-align: center;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            position: relative;
+            margin: 0 0 80px;
+
+            p {
+                font-size: 32px;
+            }
+
+            .tickets_price {
+                font-style: italic;
+            }
+
+            .tickets_info {
+                position: absolute;
+                top: 100%;
+                padding: 10px;
+
+                p {
+                    text-align: center;
+                    font-size: 20px;
+                    color: #91989F;
+                }
+            }
+
+        }
+    }
+
+
+    .page_link {
+        padding: 80px 0;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+
+
+        a {
+            display: inline-block;
+            padding: 20px 0px 20px 30px;
+            font-size: 40px;
+            font-style: italic;
+            color: #08192D;
+            position: relative;
+            z-index: 1;
+            transform: translate(0);
+            transition: all .5s ease-in-out;
+
+
+            &::after {
+                content: "\f02b";
+                font-family: "Font Awesome 6 Free";
+                font-weight: 600;
+                font-style: normal;
+                padding-left: 10px;
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "";
+                width: 80px;
+                height: 80px;
+                aspect-ratio: 80/80;
+                border-radius: 50px;
+                // border: 1px solid #08192D;
+                background-color: rgba($color: #08192D, $alpha: .3);
+                z-index: -1;
+                transform-origin: left;
+                transform: scale(1);
+                transition: all .5s ease-in-out;
+            }
+
+            &:hover {
+                transform: translateX(10px);
+                transition: all .5s ease-in-out;
+            }
+
+            &:hover::before {
+                transform-origin: left;
+                transform: scale(1.5);
+                transition: all .5s ease-in-out;
+            }
+
+        }
+
+        // line at the left / right side
+        position: relative;
+
+        &::before {
+            content: '';
+            height: 1.5px;
+            width: 180%;
+            background-color: #08192D;
+            position: absolute;
+            right: 110%;
+            bottom: 50%;
+        }
+
+        &::after {
+            content: '';
+            height: 1.5px;
+            width: 180%;
+            background-color: #08192D;
+            position: absolute;
+            left: 110%;
+            top: 50%;
+        }
+    }
+}
+
+
+
+// visitor policies
+.policies {
+
+    .policies_title {
+
+        h2 {
+            font-size: 60px;
+            text-align: center;
+        }
+    }
+
+    .basic_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        margin: 0 auto;
+        padding: 80px 0;
+
+        .basic_item {
+            width: 40%;
+            display: flex;
+            gap: 20px;
+
+            .basic_info {
+                display: flex;
+                flex-direction: column;
+
+                .title {
+
+                    h4 {
+                        font-weight: bold;
+                        font-size: 24px;
+                        padding: 10px 0;
+                    }
+                }
+
+                .txt {
+                    flex-grow: 1;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .access_title {
+
+        h3 {
+            font-style: italic;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            text-align: center;
+            color: #91989F;
+        }
+    }
+
+    .access_wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 40px 0;
+
+        .access_item {
+            width: 40%;
+            display: flex;
+            gap: 20px;
+
+            .access_info {
+                display: flex;
+                flex-direction: column;
+
+                .title {
+                    h4 {
+                        font-weight: bold;
+                        font-size: 24px;
+                        padding: 10px 0;
+                    }
+                }
+
+                .txt {
+                    flex-grow: 1;
+                    font-size: 20px;
+                }
+
+            }
+        }
+    }
+}
+
+
+// route
+.route {
+
+    .route_title {
+
+        h2 {
+            font-size: 60px;
+            text-align: center;
+        }
+    }
+
+    .transportation {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 80px 0;
+
+        .means_item {
+            width: 300px;
+            background-color: rgba(#08192D, 0.7);
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .means_icon {
+
+                p {
+                    color: #fefefe;
+                    text-align: center;
+                    font-size: 24px;
+                    font-style: italic;
+                    padding: 20px 0;
+                }
+            }
+
+            .means_info {
+
+                p {
+                    color: #fefefe;
+                    font-size: 20px;
+                    font-family: 'Noto Sans', sans-serif;
+                }
+            }
+        }
+
+
+    }
+
+    .map {
+        width: 100%;
+        background-color: #222;
+        // aspect-ratio: 5/4;
+        position: relative;
+        position: relative;
+        padding-bottom: 30%;
+        /* 此為地圖長寬比 */
+        height: 0;
+        overflow: hidden;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+
+}
+
+
+
+
+// ********** RWD **********
+// ********** RWD **********
+// ********** RWD **********
+// ********** RWD **********
+// ********** RWD **********
+// special setting 
+@media screen and (max-width: 1200px) {
+
+
+    .admission_price {
+
+        .price_title {
+            font-size: 60px;
+            text-align: center;
+        }
+    
+        .tickets_wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 80px 10px;
+            gap: 20px;
+    
+            .tickets_item {
+                width: 220px;
+                height: 220px;
+                background-color: rgba(#fefefe, 0.7);
+                color: #08192D;
+                text-align: center;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+                position: relative;
+                margin: 0 0 80px;
+    
+                p {
+                    font-size: 32px;
+                }
+    
+                .tickets_price {
+                    font-style: italic;
+                }
+    
+                .tickets_info {
+                    position: absolute;
+                    top: 100%;
+                    padding: 10px;
+    
+                    p {
+                        text-align: center;
+                        font-size: 20px;
+                        color: #91989F;
+                    }
+                }
+    
+            }
+        }
+    
+    
+        .page_link {
+    
+            // line at the left / right side
+            position: relative;
+    
+            &::before {
+                width: 150%;
+            }
+    
+            &::after {
+                width: 150%;
+            }
+        }
+    }
+
+}
+
+
+
+
+// ********** RWD **********
+// iPad & Cellphone -- width < 1023
+
+@media screen and (max-width:1023px) {
+
+    // banner setting on the iPad device
+    .visit_banner {
+
+        .banner_title {
+            font-size: 45px;
+        }
+
+    }
+
+    // opening hours setting on the iPad device
+    .opening_info {
+
+        .opening_info_title {
+            h2 {
+                font-size: 45px;
+            }
+        }
+
+        .opening_info_wrapper {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 80px;
+
+            .opening_hours_wrapper {
+                width: 80%;
+            }
+
+            // calendar setting on the iPad device
+            .calendar_wrapper {
+                width: 80%;
+
+                .calendar_box {
+
+                    .days {
+
+                        li {
+                            z-index: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    // admission_price setting on the iPad device
+    .admission_price {
+
+        .price_title {
+            font-size: 45px;
+        }
+
+        .tickets_wrapper {
+            padding: 80px 160px;
+
+        }
+
+        .page_link {
+
+            // line at the left / right side
+
+            &::before {
+                width: 120%;
+            }
+
+            &::after {
+                width: 120%;
+            }
+        }
+    }
+
+
+
+
+    // visitor policies setting on the iPad device
+    .policies {
+
+        .policies_title {
+
+            h2 {
+                font-size: 45px;
+            }
+        }
+    }
+
+
+    // route setting on the iPad device
+    .route {
+
+        .route_title {
+
+            h2 {
+                font-size: 60px;
+                text-align: center;
+            }
+        }
+
+        .transportation {
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+
+            .means_item {
+                width: 80%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 80px;
+                padding: 40px 80px;
+
+                .means_icon {
+
+                    p {
+                        color: #fefefe;
+                        text-align: center;
+                        font-size: 24px;
+                        font-style: italic;
+                        padding: 20px 0;
+                    }
+                }
+
+                .means_info {
+
+                    p {
+                        color: #fefefe;
+                        font-size: 20px;
+                        font-family: 'Noto Sans', sans-serif;
+                    }
+                }
+            }
+        }
+
+        .map {
+
+            margin-top: 40px;
+            padding-bottom: 50%;
+        }
+    }
+}
+
+
+// ***** RWD *****
+// Cellphone -- width < 768
+@media screen and (max-width:768px) {
+
+    section {
+        margin: 80px auto;
+    }
+
+    // banner setting on the Cellphone device
+    .visit_banner {
+
+        .banner_title {
+            font-size: 30px;
+        }
+
+    }
+
+
+    // opening hours setting on the Cellphone device
+    .opening_info {
+
+        .opening_info_title {
+            h2 {
+                font-size: 40px;
+            }
+        }
+
+        .opening_info_wrapper {
+
+            .opening_hours_wrapper {
+                width: 100%;
+            }
+
+            // calendar setting on the Cellphone device
+            .calendar_wrapper {
+                width: 100%;
+                padding: 10px 20px 0;
+                font-size: 16px;
+
+                .calender_header {
+                    padding: 16px 0;
+
+                    .icons {
+
+                        span {
+                            height: 32px;
+                            width: 32px;
+                            line-height: 32px;
+                        }
+
+                        span:last-child {
+                            margin-right: 0px;
+                        }
+                    }
+                }
+
+                .calendar_box {
+                    padding: 0px;
+
+                    .days {
+
+                        li {
+                            z-index: 0;
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+
+
+    // admission_price setting on the Cellphone device
+    .admission_price {
+
+        .price_title {
+            font-size: 40px;
+        }
+
+        .tickets_wrapper {
+            padding: 80px 40px;
+
+            .tickets_item {
+
+                p {
+                    font-size: 20px;
+                }
+
+                .tickets_info {
+                    position: absolute;
+                    top: 240px;
+                    padding: 10px;
+
+                    p {
+                        font-size: 16px;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+
+    // visitor policies setting on the Cellphone device
+    .policies {
+
+        .policies_title {
+
+            h2 {
+                font-size: 40px;
+            }
+        }
+
+        .basic_wrapper {
+            flex-direction: column;
+            align-items: center;
+
+            .basic_item {
+                width: 80%;
+
+                .basic_info {
+
+                    .title {
+
+                        h4 {
+                            font-size: 20px;
+                        }
+                    }
+
+                    .txt {
+                        font-size: 16px;
+
+                        p {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+
+        .access_title {
+
+            h3 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 20px;
+                padding: 0 40px;
+            }
+        }
+
+        .access_wrapper {
+            flex-direction: column;
+            align-items: center;
+
+            .access_item {
+                width: 80%;
+
+                .access_info {
+                    display: flex;
+                    flex-direction: column;
+
+                    .title {
+                        h4 {
+                            font-size: 20px;
+                        }
+                    }
+
+                    .txt {
+                        font-size: 16px;
+
+                        p {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // route setting on the Cellphone device
+    .route {
+
+        .route_title {
+
+            h2 {
+                font-size: 40px;
+            }
+        }
+
+        .transportation {
+            display: none;
+        }
+
+        .map {
+
+            margin-top: 40px;
+            padding-bottom: 100%;
+            filter: grayscale(1);
+        }
+
+        position: relative;
+
+        &::before {
+            content: '';
+            height: 70px;
+            width: 1.5px;
+            background-color: #08192D;
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + (120px - 70px) / 2);
+        }
+
+        &::after {
+            content: '';
+            height: 110px;
+            width: 1.5px;
+            background-color: #08192D;
+            position: absolute;
+            left: 50%;
+            top: calc(100% + (160px - 110px) / 2);
+        }
+
+    }
+}
+
+
+
+
+
+// ***** RWD *****
+// mini-version for iphone XS
+@media screen and (max-width:410px) {
+
+    .visit_banner {
+
+        .banner_title {
+            font-size: 24px;
+        }
+
+    }
+
+
+    .opening_info {
+        .opening_info_wrapper {
+
+            .opening_hours_wrapper {
+                font-size: 16px;
+            }
+
+            // calendar setting on the mini device
+            .calendar_wrapper {
+                width: 100%;
+                padding: 10px 20px 0;
+                font-size: 12px;
+
+                .calender_header {
+                    padding: 16px 0;
+
+                    .icons span {
+                        height: 32px;
+                        width: 32px;
+                        line-height: 32px;
+                    }
+                }
+
+                .calendar_box {
+                    padding: 0px;
+
+                    .days {
+
+                        li {
+                            z-index: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    // admission price setting on the mini device
+    .admission_price {
+
+        .page_link {
+            padding: 20px 0;
+
+            a {
+                font-size: 30px;
+
+                &::after {
+                    padding-left: 5px;
+                }
+
+                &::before {
+                    width: 50px;
+                    height: 50px;
+                    aspect-ratio: 50/50;
+                    top: 10%;
+                }
+            }
+
+            position: relative;
+
+            &::before {
+                content: '';
+                height: 60px;
+                width: 1.5px;
+                background-color: #08192D;
+                position: absolute;
+                left: 50%;
+                bottom: 100%;
+            }
+
+            &::after {
+                content: '';
+                height: 60px;
+                width: 1.5px;
+                background-color: #08192D;
+                position: absolute;
+                left: 50%;
+                top: 100%;
+            }
+        }
+    }
+}
